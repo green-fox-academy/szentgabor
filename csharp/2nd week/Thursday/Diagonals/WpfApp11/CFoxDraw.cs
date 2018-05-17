@@ -8,13 +8,15 @@ namespace WpfApp11
 {
     public class FoxDraw
     {
-        private Canvas Canvas { get; set; }
+        public Canvas Canvas { get; set; }
         private SolidColorBrush LineColor { get; set; } = SystemColors.WindowFrameBrush;
         private SolidColorBrush ShapeColor { get; set; } = new SolidColorBrush(Colors.DarkGreen);
 
         public FoxDraw(Canvas canvas)
         {
             Canvas = canvas;
+            canvas.Width = 800;
+            canvas.Height = 450;
         }
 
         public void BackgroundColor(Color color)

@@ -24,6 +24,16 @@ namespace WpfApp11
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
+
+            foxDraw.StrokeColor(Colors.Green);
+            foxDraw.DrawLine(0, 0, 800, 450);
+
+            var startPoint = new Point(0, 450);
+            var endPoint = new Point(800, 0);
+            foxDraw.StrokeColor(Colors.Red);
+            foxDraw.DrawLine(startPoint, endPoint);
+            // Draw the canvas' diagonals.
+            // If it starts from the upper-left corner it should be green, otherwise it should be red.
         }
     }
 }
