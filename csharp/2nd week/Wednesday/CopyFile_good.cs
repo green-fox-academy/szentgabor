@@ -14,36 +14,35 @@ namespace ConsoleApp53
         {
             string file1 = @"C:\Users\Gabor\Desktop\szentgabor\csharp\2nd week\Wednesday\file1.txt";
             string file2 = @"C:\Users\Gabor\Desktop\szentgabor\csharp\2nd week\Wednesday\file2.txt";
-            bool didItSucceed = ;
-            Console.WriteLine(SuccessfulCopy(didItSucceed);
+            bool didItSucceed = true;
+            Console.WriteLine(SuccessfulCopy(file1, file2, didItSucceed));
+            Console.ReadLine();
             // Write a function that reads all lines of a file and writes the read lines to an other file (a.k.a copies the file)
             // It should take the filenames as parameters
             // It should return a boolean that shows if the copy was successful
         }
-        static bool SuccessfulCopy
-            string[] Lines1 = File.ReadAllLines(file1);
-            string[] Lines2 = File.ReadAllLines(file2);
-
-            for (int i = 0; i<Lines1.Length; i++)
-            {
-                StreamWriter sw = new StreamWriter(file2);
-            }
-                    // if (line<Lines2.Length)(Lines1[line].Equals(Lines2[line]))
-            
+        public static bool SuccessfulCopy(string file1, string file2, bool valami)
+        {
             try
             {
+                StreamWriter sw = new StreamWriter(file2);
+                string[] Lines1 = File.ReadAllLines(file1);
                 
-                
-                for (int i = 0; i<file1.Length; i++)
+                foreach (var item in Lines1)
                 {
-                strw.WriteLine(file1);
+                    sw.WriteLine (item);
+                    // az az írófunkció kell, amivel hozzáadom (nem mindig felülírja a már átírtat)
                 }
-            sw.Dispose();
+                sw.Dispose();
+
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
             }
 
-            finally
-            {
-                
-            return SuccessfulCopy
+        }// if (line<Lines2.Length)(Lines1[line].Equals(Lines2[line])
     }
 }
