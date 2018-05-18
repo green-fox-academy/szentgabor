@@ -46,6 +46,5 @@ namespace ToTheCenter
                 foxDraw.DrawLine(startPoint, endPoint);
             }
         }
-
     }
 }
