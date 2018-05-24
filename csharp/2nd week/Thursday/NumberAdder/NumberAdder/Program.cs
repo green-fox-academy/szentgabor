@@ -12,22 +12,25 @@ namespace NumberAdder
         {
             // Write a recursive function that takes one parameter: n and adds numbers from 1 to n.
             int n = 50;
-            Countup(n);
+            int k = 1;
+            int l = 0;
+            Countup(n,k,l);
             Console.ReadLine();
         }
 
-        public static void Countup(int ActualNumber)
+        public static void Countup(int ActualNumber, int AddedNumber, int HelperNumber)
         {
-            if (ActualNumber == 0)
+            if (ActualNumber > AddedNumber)
             {
-                Console.WriteLine(ActualNumber);
+                HelperNumber = HelperNumber + AddedNumber;
+                ++AddedNumber;
+                Countup(ActualNumber, AddedNumber, HelperNumber);
             }
 
-            else if (ActualNumber != 0)
+            else if (ActualNumber == AddedNumber)
             {
+                ActualNumber = ActualNumber + HelperNumber;
                 Console.WriteLine(ActualNumber);
-                ActualNumber--;
-                Countup(ActualNumber);
             }
         }
     }
