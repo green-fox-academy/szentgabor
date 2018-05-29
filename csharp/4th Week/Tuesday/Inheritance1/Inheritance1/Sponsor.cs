@@ -27,7 +27,7 @@ namespace Inheritance1
             return String.Format($"Hi, I'm {Name}, a {Age} year old {Gender} who represents {company} and hired {hiredStudents} students so far.", Name, Age, Gender, company, hiredStudents);
         }
         
-        public void Hire(int NumberOfHiredStudents);
+        public void Hire(int NumberOfHiredStudents)
         {
             hiredStudents += NumberOfHiredStudents;
         }
