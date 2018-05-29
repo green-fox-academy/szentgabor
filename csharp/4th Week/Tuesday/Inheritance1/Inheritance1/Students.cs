@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Inheritance1
 {
-    class Students : Person
+    class Student : Person
     {
         private string previousOrganization;
         private int skippedDays;
 
-        public Students(string name, int age, string gender, string previousOrganization) :base(name, age, gender)
+        public Student(string name, int age, string gender, string previousOrganization) :base(name, age, gender)
         {
             this.previousOrganization = previousOrganization;
             this.skippedDays = 0;
         }
-        public Students()
+        public Student()
         {
             this.previousOrganization = "The School of Life";
             this.skippedDays = 0;
