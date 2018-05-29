@@ -18,7 +18,7 @@ namespace Inheritance1
         }
         public Student()
         {
-            this.previousOrganization = "The School of Life";
+            previousOrganization = "The School of Life";
             this.skippedDays = 0;
         }
         public override string GetGoal()
@@ -27,11 +27,11 @@ namespace Inheritance1
         }
         public override string Introduce()
         {
-            String.Format("Hi, I'm {0}, a {1} year old {2} from {3} who skipped {4} days from the course already.", Name, Age, Gender, previousOrganization, skippedDays);
+            return String.Format("Hi, I'm {0}, a {1} year old {2} from {3} who skipped {4} days from the course already.", Name, Age, Gender, previousOrganization, skippedDays);
         }
-        public int SkipDays(int numberOfDays)
+        public void SkipDays(int numberOfDays)
         {
-            return numberOfDays + skippedDays;
+            skippedDays += numberOfDays;
         }
     }
 }

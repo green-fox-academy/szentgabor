@@ -12,25 +12,25 @@ namespace Inheritance1
 
         public Mentor(string name, int age, string gender, string level) : base(name, age, gender)
         {
-            this.previousOrganization = previousOrganization;
-            this.skippedDays = 0;
+            this.level = level;
         }
-        public Students()
+        public Mentor()
         {
-            this.previousOrganization = "The School of Life";
-            this.skippedDays = 0;
+            this.level = "intermediate";
+        }
+
+        public override string GetGoal()
+        {
+            return "Educate brilliant Be a junior software developer.";
+        }
+        public override string Introduce()  
+        {
+            return String.Format("Hi, I'm {0}, a {1} year old {2} {3} mentor.", Name, Age, Gender, level);
         }
         /*
         level: the level of the mentor (junior / intermediate / senior)
     methods:
-        GetGoal(): prints out "Educate brilliant junior software developers."
         Introduce(): "Hi, I'm name, a age year old gender level mentor."
-
-The Mentor class has the following constructors:
-
-    Mentor(name, age, gender, level)
-    Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermediate
-
          */
     }
 }

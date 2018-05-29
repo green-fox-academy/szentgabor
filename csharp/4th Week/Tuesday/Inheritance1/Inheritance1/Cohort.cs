@@ -12,25 +12,26 @@ namespace Inheritance1
         private List<Student> students;
         private List<Mentor> mentors;
 
-        Cohort(name) : public Cohort(string cohortname, List<Student> students, List<Mentor> mentors)
+        public Cohort(string name, List<Student> students, List<Mentor> mentors)
         {
-            this.name = cohortname;
-            this.students = students;
-            this.mentors = mentors;
+            this.name = name;
+            students = new List<Student>();
+            mentors = new List<Mentor>();
         }
 
-Create a Cohort class that has the following fields:
-        name: the name of the cohort
-        students: a list of Students
-        mentors: a list of Mentors
-    methods:
-        addStudent(Student) : adds the given Student to students list
-         addMentor(Mentor): adds the given Mentor to mentors list
-         info(): prints out "The name cohort has students.size() students and mentors.size() mentors."
+        public void addStudent(Student student)
+        {
+            students.Add(student);
+        }
 
-The Cohort class has the following constructors:
+        public void addMentor(Mentor mentor)
+        {
+            mentors.Add(mentor);
+        }
 
-        beside the given parameter, it sets students and mentors as empty lists
-
+        public string info()
+        {
+            return $"The {name}\n cohort has {students.Count}\n students and {mentors.Count}\n mentors.";
+        }
     }
 }
