@@ -19,13 +19,13 @@ namespace Inheritance1
             this.level = "intermediate";
         }
 
-        public override string GetGoal()
+        public override void GetGoal()
         {
-            return "Educate brilliant Be a junior software developer.";
+            Console.WriteLine("Educate brilliant Be a junior software developer.");
         }
-        public override string Introduce()  
+        public override void Introduce()
         {
-            return String.Format("Hi, I'm {0}, a {1} year old {2} {3} mentor.", Name, Age, Gender, level);
+            Console.WriteLine(String.Format("Hi, I'm {0}, a {1} year old {2} {3} mentor.", Name, Age, Gender, level));
         }
         /*
         level: the level of the mentor (junior / intermediate / senior)

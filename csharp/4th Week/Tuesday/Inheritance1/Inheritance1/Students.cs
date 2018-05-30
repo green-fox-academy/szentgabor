@@ -21,13 +21,13 @@ namespace Inheritance1
             previousOrganization = "The School of Life";
             this.skippedDays = 0;
         }
-        public override string GetGoal()
+        public override void GetGoal()
         {
-            return "Be a junior software developer.";
+            Console.WriteLine("Be a junior software developer.");
         }
-        public override string Introduce()
+        public override void Introduce()
         {
-            return String.Format("Hi, I'm {0}, a {1} year old {2} from {3} who skipped {4} days from the course already.", Name, Age, Gender, previousOrganization, skippedDays);
+            Console.WriteLine(String.Format("Hi, I'm {0}, a {1} year old {2} from {3} who skipped {4} days from the course already.", Name, Age, Gender, previousOrganization, skippedDays));
         }
         public void SkipDays(int numberOfDays)
         {

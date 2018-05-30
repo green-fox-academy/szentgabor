@@ -50,14 +50,14 @@ namespace Inheritance1
             }
         }
 
-        public virtual string Introduce()
+        public virtual void Introduce()
         {
-        return String.Format("Hi, I'm {0}, a {1} year old {2}", Name, Age, Gender);
+            Console.WriteLine(String.Format("Hi, I'm {0}, a {1} year old {2}", Name, Age, Gender));
         }
 
-        public virtual string GetGoal()
+        public virtual void GetGoal()
         {
-            return "My goal is: Live for the moment.";
+            Console.WriteLine("My goal is: Live for the moment.");
         }
     }
 }

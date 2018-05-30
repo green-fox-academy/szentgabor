@@ -12,24 +12,24 @@ namespace Inheritance1
         private List<Student> students;
         private List<Mentor> mentors;
 
-        public Cohort(string name, List<Student> students, List<Mentor> mentors)
+        public Cohort(string name)
         {
             this.name = name;
             students = new List<Student>();
             mentors = new List<Mentor>();
         }
 
-        public void addStudent(Student student)
+        public void AddStudent(Student student)
         {
             students.Add(student);
         }
 
-        public void addMentor(Mentor mentor)
+        public void AddMentor(Mentor mentor)
         {
             mentors.Add(mentor);
         }
 
-        public string info()
+        public string Info()
         {
             return $"The {name}\n cohort has {students.Count}\n students and {mentors.Count}\n mentors.";
         }

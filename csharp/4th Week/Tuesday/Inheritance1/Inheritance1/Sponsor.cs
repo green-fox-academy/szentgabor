@@ -11,7 +11,7 @@ namespace Inheritance1
         private string company;
         private int hiredStudents;
 
-        public Sponsor(string name, int age, string gender, string level, string company) : base(name, age, gender)
+        public Sponsor(string name, int age, string gender, string company) : base(name, age, gender)
         {
             this.company = company;
             this.hiredStudents = 0;
@@ -22,19 +22,19 @@ namespace Inheritance1
             this.hiredStudents = 0;
         }
 
-        public override string Introduce()
+        public override void Introduce()
         {
-            return String.Format($"Hi, I'm {Name}, a {Age} year old {Gender} who represents {company} and hired {hiredStudents} students so far.", Name, Age, Gender, company, hiredStudents);
+            Console.WriteLine(String.Format($"Hi, I'm {Name}, a {Age} year old {Gender} who represents {company} and hired {hiredStudents} students so far.", Name, Age, Gender, company, hiredStudents));
         }
         
-        public void Hire(int NumberOfHiredStudents)
+        public void Hire()
         {
-            hiredStudents += NumberOfHiredStudents;
+            hiredStudents ++;
         }
 
-        public override string GetGoal()
+        public override void GetGoal()
         {
-            return "Hire brilliant junior software developers.";
+            Console.WriteLine("Hire brilliant junior software developers.");
         }
     }
 }
