@@ -18,6 +18,11 @@ namespace Inheritance1
             people.Add(jane);
             var john = new Student("John Doe", 20, "male", "BME");
             people.Add(john);
+
+            var john2 = john.Clone() as Student;
+            Console.WriteLine("1. {0}", john.Name);
+            Console.WriteLine("2. {0}", john2.Name);
+
             var student = new Student();
             people.Add(student);
             var gandhi = new Mentor("Gandhi", 148, "male", "senior");

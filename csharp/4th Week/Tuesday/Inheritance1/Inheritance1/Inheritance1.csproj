@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cohort.cs" />
+    <Compile Include="ICloneable.cs" />
     <Compile Include="Mentor.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
