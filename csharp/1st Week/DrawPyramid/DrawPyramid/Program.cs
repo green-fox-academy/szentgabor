@@ -26,6 +26,27 @@ namespace DrawPyramid
                 }
                 Console.WriteLine();
             }
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < a - i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            for (int i = 0; i < a; i++)
+            {
+                for (int j = 0; j < a - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k <= i + i; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
