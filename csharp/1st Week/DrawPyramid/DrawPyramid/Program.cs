@@ -32,6 +32,10 @@ namespace DrawPyramid
                 {
                     Console.Write("*");
                 }
+                for (int k = 0; k < a - i; k++)
+                {
+                    Console.WriteLine("kl");
+                }
                 Console.WriteLine();
             }
             Console.WriteLine();
@@ -47,6 +51,7 @@ namespace DrawPyramid
                 }
                 Console.WriteLine();
             }
+            Console.ReadLine();
         }
     }
 }

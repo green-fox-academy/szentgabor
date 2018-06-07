@@ -18,7 +18,9 @@ namespace DrawTriangle
             {
                 temp += "*";
                 Console.WriteLine(temp);
+
             }
+            Console.ReadLine();
         }
     }
 }
