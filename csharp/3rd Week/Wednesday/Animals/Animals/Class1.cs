@@ -17,6 +17,12 @@ namespace Animals
             thirst = 50;
         }
 
+        public Animals(int hunger, int thirst)
+        {
+            this.hunger = hunger;
+            this.thirst = thirst;
+        }
+
         public void Eat()
         {
             hunger--;
