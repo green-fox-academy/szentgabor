@@ -31,14 +31,16 @@ namespace Sharpie_AndSet_
 
             Console.WriteLine(sharpieList.CountUsable());
 
-            float kl = sharpie1.inkAmount;
-            for (int i = 0; i < kl; i++)
+            //float kl = sharpie1.inkAmount;
+            //for (int i = 0; i < kl; i++)
+            //{
+            //        sharpie1.Use();
+            //}
+            while (sharpie1.inkAmount > 0)
             {
-                if (kl > 0)
-                {
-                    sharpie1.Use();
-                }
+                sharpie1.Use();
             }
+
             Console.WriteLine(sharpie1.GetInkStatus());
             Console.WriteLine(sharpieList.CountUsable());
 

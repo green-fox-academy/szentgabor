@@ -21,7 +21,11 @@ namespace Sharpie_AndSet_
 
         public void Use()
         {
-            inkAmount--;
+            if (inkAmount == 0)
+            {
+                throw new Exception("e");
+            }
+                inkAmount--;
         }
 
         public float GetInkStatus()
