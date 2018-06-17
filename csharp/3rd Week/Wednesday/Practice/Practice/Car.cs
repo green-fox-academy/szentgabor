@@ -19,14 +19,11 @@ namespace Practice
 
         public void Drive(double distance)
         {
-            gas -= distance / 13;
             if (distance / 13 > gas)
             {
-                throw new Exception("f");
-                {
-                    Console.WriteLine("The car needs more fuel for such a distance.");
-                }
+                throw new Exception("The car needs more fuel for such a distance.");
             }
+            gas -= distance / 13;
         }
     }
 }

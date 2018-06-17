@@ -24,7 +24,15 @@ namespace Practice
             Console.WriteLine();
             station1.Refill(car1);
             Console.WriteLine($"Car1 capacity: {car1.capacity} \nCar1 Gas: {car1.gas} \nStation1 capacity: {station1.capacity} \nStation1 actualgas: {station1.actual}");
-
+            Console.WriteLine();
+            try
+            {
+                car1.Drive(1000);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadKey();
         }
     }
