@@ -79,6 +79,7 @@ namespace DiamondDraw
                     Console.WriteLine();
                 }
             }
+                    Console.ReadLine();
         }
     }
 }
