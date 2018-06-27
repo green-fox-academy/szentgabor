@@ -3,3 +3,6 @@ András linkje:
 https://www.youtube.com/watch?v=anTP-mgktiI
 Petié
 https://sqlitebrowser.org/
+még
+https://www.dotnettricks.com/learn/dependencyinjection/implementation-of-dependency-injection-pattern-in-csharp
+https://www.youtube.com/watch?v=-lXSfffO2VA
