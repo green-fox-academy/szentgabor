@@ -69,8 +69,8 @@ namespace Animal_protection
                     // if (n == 0 || r == 0) { break; }
                     if (adopters.Count > 0)
                     {
-                        pairs.Add(adopters[n]);
-                        adopters.Remove(adopters[n]);
+                    pairs.Add(adopters[n]);
+                    adopters.Remove(adopters[n]);
                     pairs.Add(animals[r].ToString());
                     animals.Remove(animals[r]);
                     }

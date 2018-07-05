@@ -6,3 +6,6 @@ https://sqlitebrowser.org/
 még
 https://www.dotnettricks.com/learn/dependencyinjection/implementation-of-dependency-injection-pattern-in-csharp
 https://www.youtube.com/watch?v=-lXSfffO2VA
+
+Márk:
+https://github.com/green-fox-academy/ocelot-syllabus/commit/d06aeb38e9bfb338b48bd1890e98866ad3a46eb3
