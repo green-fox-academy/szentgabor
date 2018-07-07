@@ -11,6 +11,8 @@ namespace BankOfSimba.Controllers
 {
     public class HomeController : Controller
     {
+        static HomeIndexViewModel model = new HomeIndexViewModel();
+
         public IActionResult Index()
         {
             return View();
@@ -19,17 +21,46 @@ namespace BankOfSimba.Controllers
         [Route("simba")]
         public IActionResult Animalizer()
         {
-            BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
+            BankAccount bankAccount = new BankAccount("Simba", 2000, "lion", true);
             return View(bankAccount);
         }
 
-        public static HomeIndexViewModel lister = new HomeIndexViewModel();
+        // HomeIndexViewModel lister = new HomeIndexViewModel();
 
         [Route("animal")]
         public IActionResult AnimalAccounts()
         {
-            lister.Accounts.Add(new BankAccount ("Rafiki", 7500, "mandrill" ));
-            return View(lister);
+            // lister.Accounts.Add(new BankAccount ("Rafiki", 7500, "mandrill" ));
+            return View(model);
+        }
+
+        [HttpPost]
+        [Route("stat")]
+        public IActionResult BalanceState(string name)
+        {
+            if (name == null)
+            {
+                return RedirectToAction("AnimalAccounts");
+            }
+            // var balance = 0;
+            model.CheckAnimal(name);
+               
+            return RedirectToAction("AnimalAccounts");
+        }
+
+        [HttpGet]
+        [Route("increment")]
+        public IActionResult Incrementer()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("add")]
+        public IActionResult Add(string name, int balance, string animalType, bool isKing)
+        {
+            model.Accounts.Add(new BankAccount ( name, balance, animalType, isKing ));
+            return RedirectToAction("Animalaccounts");
         }
 
         public IActionResult About()

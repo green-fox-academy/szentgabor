@@ -7,12 +7,50 @@
     @{
         ViewData["Title"] = "Animalizer";
     }
-    @foreach (var item in Model.Accounts)
-    {
-
-    }
-    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Account Balance</th>
+            <th>Animal Type</th>
+            <th>ID</th>
+            <th>King?</th>
+        </tr>
+        @foreach (var item in Model.Accounts)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Balancer()</td>
+                <td>@item.AnimalType</td>
+                <td>@item.ID</td>
+                <td>@item.IsKing</td>
+            </tr>}
+    </table>
+    <div>yeah</div>
+    <form action="stat" method="post">
+        Name someone to give some zebras to:<br>
+        <input type="text" name="name" required value=""><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <fieldset>
+        <legend>You can add a new character here</legend>
+        <form action="add" method="post">
+            For that please add the following parameters:<br>
+            <input type="text" name="name" required value=""><br>
+            <br>
+            <input type="number" name="balance" required value=""><br>
+            <br>
+            <input type="text" name="animalType" required placeholder="animal type" value=""><br>
+            <br>
+            <select name="isKing">
+                <option value="0">False
+                </option>
+                <option value="1">True</option>
+            </select>
+                <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        </fieldset>
 </body>
 </html>
-
-
