@@ -1,0 +1,72 @@
+﻿@model ToDo.ViewModels.ToDoViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+@if (Model.toDos.Count() > 0)
+{<table class="table table-striped">
+     <tr>
+         <th>ID</th>
+         <th>Name</th>
+         <th>Check Box</th>
+         <th>Priority</th>
+         <th>Remove Done ToDos</th>
+     </tr>
+        @foreach (var item in Model.toDos)
+        {
+            var urgent = (item.Urgent) ? "danger" : "";
+            var done = (item.Checked) ? "success" : "";
+            if (done.Length > 0) { urgent = ""; }
+
+     <tr class="@done @urgent">
+         <td>@item.ID</td>
+         <td>@item.Name</td>
+         <td>
+             <form action="check" method="post">
+                 <br>
+                 <input type="hidden" name="id" value="@item.ID">
+                 @*<input type="text" onchange="if(this.value=='igen') this.form.submit()">*@
+                 @if (item.Checked)
+                 {
+                     <input type="checkbox" checked onclick="this.form.submit()">
+                 }
+                 else
+                 {
+                     <input type="checkbox" onclick="this.form.submit()">
+                 }
+                 @item.Checked.ToString()
+             </form>
+         </td>
+         <td>
+             <form action="urgent" method="post">
+                 <input type="hidden" name="id" value="@item.ID"><br>
+                 <input type="submit" value="Change priority">
+             </form>
+         </td>
+         <td>
+             <form action="delete" method="post">
+                 <input type="hidden" name="id" value="@item.ID"><br>
+                 <input type="submit" value="Remove">
+             </form>
+         </td>
+     </tr>}
+    </table>}
+
+<form action="add" method="post">
+    Add a ToDo!<br>
+    <input type="text" name="name" required value=""><br>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<form action="try" method="post">
+    Add numbers<br>
+    <input type="number" name="proba" value=""><br>
+    <input type="number" name="proba" value=""><br>
+    <input type="number" name="proba" value=""><br>
+    <input type="number" name="proba" value=""><br>
+    <input type="number" name="proba" value=""><br>
+    <br>
+    <input type="submit" value="Submit">
+</form>
