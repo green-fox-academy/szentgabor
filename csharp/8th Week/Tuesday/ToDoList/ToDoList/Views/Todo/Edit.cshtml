@@ -1,0 +1,59 @@
+﻿@model Todo
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Done</th>
+            <th>Priority</th>
+        </tr>
+        <tr>
+            <td>@Model.Id</td>
+            <td>
+                <form action="/{id}/edit" method="post">
+                    <div>
+                        <label>Name of Todo</label>
+                        <input type="text" name="Title" value="@Model.Title" />
+                    </div>
+                    <div>
+                        <label>Urgency</label>
+                        <input type="hidden" name="IsUrgent" value="@Model.IsUrgent">
+                        @if (Model.IsUrgent)
+                        {
+                            <input type="checkbox" checked onclick="this.form.submit()">
+                        }
+                        else
+                        {
+                            <input type="checkbox" onclick="this.form.submit()">
+                        }
+                    </div>
+                    <div>
+                        <label>Status</label>
+                        <input type="hidden" name="IsDone" value="@Model.IsDone">
+                        @if (Model.IsDone)
+                        {
+                            <input type="checkbox" checked onclick="this.form.submit()">
+                        }
+                        else
+                        {
+                            <input type="checkbox" onclick="this.form.submit()">
+                        }
+                    </div>
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                    <</form>>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
