@@ -19,39 +19,46 @@
         <tr>
             <td>@Model.Id</td>
             <td>
-                <form action="/{id}/edit" method="post">
+                <form action="/@Model.Id/edit" method="post">
                     <div>
                         <label>Name of Todo</label>
                         <input type="text" name="Title" value="@Model.Title" />
                     </div>
                     <div>
-                        <label>Urgency</label>
-                        <input type="hidden" name="IsUrgent" value="@Model.IsUrgent">
-                        @if (Model.IsUrgent)
-                        {
-                            <input type="checkbox" checked onclick="this.form.submit()">
-                        }
-                        else
-                        {
-                            <input type="checkbox" onclick="this.form.submit()">
-                        }
+                        <label>Urgent?</label>
+                        <select name="IsUrgent">
+                            @if (Model.IsUrgent)
+                            {
+                                <option value="TRUE">Yes</option>
+                                <option value="FALSE">No</option>
+                            }
+                            else
+                            {
+                                <option value="FALSE">No</option>
+                                <option value="TRUE">Yes</option>
+                            }
+                            </select>
                     </div>
                     <div>
-                        <label>Status</label>
-                        <input type="hidden" name="IsDone" value="@Model.IsDone">
-                        @if (Model.IsDone)
-                        {
-                            <input type="checkbox" checked onclick="this.form.submit()">
-                        }
-                        else
-                        {
-                            <input type="checkbox" onclick="this.form.submit()">
-                        }
+                        <label>Is it done?</label>
+                        <select name="IsDone">
+                            @if (Model.IsDone)
+                            {
+                                <option value="TRUE">Yes</option>
+                                <option value="FALSE">No</option>
+                            }
+                            else
+                            {
+                                <option value="FALSE">No</option>
+                                <option value="TRUE">Yes</option>
+                            }
+                            </select>
                     </div>
                     <div>
                         <button type="submit">Submit</button>
                     </div>
-                    <</form>>
+                    <
+                </form>>
             </td>
         </tr>
     </table>

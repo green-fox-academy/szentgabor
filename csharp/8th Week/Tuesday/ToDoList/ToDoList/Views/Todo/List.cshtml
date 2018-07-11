@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Todo List DB</h2>
-    <a href="http://localhost:63406/todo/add" target="_self">Click here to add a Todo!</a>
+    <a href="/todo/add" target="_self">Click here to add a Todo!</a>
     @if (Model.Count() > 0)
     {<table class="table table-striped">
             <tr>
@@ -35,12 +35,12 @@
                         @item.IsUrgent
                     </td>
                     <td>
-                        <form action="/{id}/delete" method="post">
+                        <form action="/@item.Id/delete" method="post">
                             <input type="submit" value="Remove" class="btn btn-danger">
                         </form>
                     </td>
                     <td>
-                        <a href="http://localhost:63406/todo/@item.Id/edit" target="_self">Edit Todo</a>
+                        <a href="/@item.Id/edit" target="_self">Edit Todo</a>
                     </td>
                 </tr>}
         </table>}

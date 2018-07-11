@@ -9,7 +9,7 @@ using ToDoList.Services;
 
 namespace ToDoList.Controllers
 {
-    [Route ("todo")]
+    [Route ("/todo")]
     public class TodoController : Controller
         {
         private ITodoService todoService;
@@ -72,9 +72,9 @@ namespace ToDoList.Controllers
         }
 
         [HttpPost("/{id}/edit")]
-        public IActionResult EditTodo(long id)
+        public IActionResult EditTodo(Todo todo)
         {
-            todoService.UpdateTodo(todoDbContext.Todos.ToList()[1]);
+            todoService.UpdateTodo(todo);
             return RedirectToAction("list");
         }
     }
