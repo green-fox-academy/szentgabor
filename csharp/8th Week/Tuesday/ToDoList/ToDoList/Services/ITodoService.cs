@@ -8,6 +8,7 @@ namespace ToDoList.Services
 {
     public interface ITodoService
     {
+        List<Todo> ReturnFilteredTodos(bool isActive);
         List<Todo> GetTodos();
         Todo GetTodoById(long id);
         void CreateTodo(Todo todo);

@@ -16,6 +16,14 @@ namespace ToDoList.Services
             this.todoRepository = todoRepository;
         }
 
+        public List<Todo> ReturnFilteredTodos(bool isActive)
+        {
+            IEnumerable<Todo> filteredTodos = (isActive == true) ?
+                                              (GetTodos().Where(x => x.IsDone == false)) :
+                                              (GetTodos());
+            return filteredTodos.ToList();
+        }
+
         public void CreateTodo(Todo todo)
         {
             todoRepository.Create(todo);

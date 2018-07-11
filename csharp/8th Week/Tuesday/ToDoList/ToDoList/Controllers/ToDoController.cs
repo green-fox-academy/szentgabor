@@ -38,11 +38,7 @@ namespace ToDoList.Controllers
         [Route("getdone")]
         public IActionResult GetDone(bool isActive)
         {
-            IEnumerable<Todo> filteredTodos = (isActive == true) ?
-                (todoDbContext.Todos.ToList().Where(x => x.IsDone == false)) :
-                (todoDbContext.Todos.ToList());
-            
-            return Json(filteredTodos);
+            return Json(todoService.ReturnFilteredTodos(isActive));
         }
 
         [HttpGet("add")]
