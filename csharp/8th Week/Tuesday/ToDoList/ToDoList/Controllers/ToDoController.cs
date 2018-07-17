@@ -13,12 +13,10 @@ namespace ToDoList.Controllers
     public class TodoController : Controller
         {
         private ITodoService todoService;
-        private TodoDbContext todoDbContext;
 
-        public TodoController(ITodoService todoService, TodoDbContext todoDbContext)
+        public TodoController(ITodoService todoService)
         {
             this.todoService = todoService;
-            this.todoDbContext = todoDbContext;
         }
 
         public IActionResult Index()
