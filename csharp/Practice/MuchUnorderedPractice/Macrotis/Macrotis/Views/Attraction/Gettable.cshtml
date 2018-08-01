@@ -1,0 +1,64 @@
+﻿@model List<Attraction>
+@{
+    ViewData["Title"] = "Gettable";
+}
+
+<h2>Gettable</h2>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Attractions</title>
+</head>
+<body>
+    @if (Model.Count() > 0)
+    {<table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Price</th>
+                <th>Longitude</th>
+                <th>Lattitude</th>
+                <th>Category</th>
+                <th>Duration</th>
+                <th>Recommended Age</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.City</td>
+                    <td>@item.Price</td>
+                    <td>@item.Longitude</td>
+                    <td>@item.Lattitude</td>
+                    <td>@item.Category</td>
+                    <td>@item.Duration</td>
+                    <td>@item.RecommendedAge</td>
+                </tr>}
+        </table>}
+     <form action="gettable" method="post">
+         Add an Attraction!<br>
+         <input type="text" name="Name" required value=""><br>
+         <br>
+         <label>City:</label>
+         <input type="text" name="City" required value="" />
+         <label>Price:</label>
+         <input type="number" name="Price" value="" />
+         <br>
+         <label>Longitude</label>
+         <input type="number" name="Longitude" required value=""><br>
+         <br>
+         <label>Lattitude</label>
+         <input type="number" name="Lattitude" value="" />
+         <label>Category</label>
+         <input type="text" name="Category" required value="" />
+         <label>Duration</label>
+         <input type="number" name="Duration" required value="" />
+         <label>Recommended time</label>
+         <input type="number" name="Recommended time" required value="" />
+         <br>
+         <input type="submit" value="Submit">
+     </form>
+</body>
+</html>

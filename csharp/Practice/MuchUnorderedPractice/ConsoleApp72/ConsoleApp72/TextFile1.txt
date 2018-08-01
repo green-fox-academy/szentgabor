@@ -1,0 +1,7 @@
+﻿<Eleonora>;<1985-12-07>;<Tallinn>
+<Michael Schumacher>;<1995-12-07>;<Riga>
+<Diego Tristan>;<1999-01-07>;<Dordrecht>
+<Cristian LaPaz>;<2003-12-07>;<Napoli>
+<Dolores Doldrum>;<1975-12-07>;<Changchun>
+<Brumm>;<1985-11-07>;<Kyoto>
+<Pablo Picasso>;<1985-12-07>;<Kazincbarcika>

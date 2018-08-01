@@ -1,0 +1,16 @@
+﻿@model Meme
+@{
+    ViewData["Title"] = "View";
+}
+
+@foreach (var meme in Model)
+{
+<h2>@meme.Id</h2>
+
+<p>@meme.Name</p>
+
+<h3>@meme.Text</h3>
+}
+
+
+

@@ -52,10 +52,7 @@ namespace TodoList.Repositories
                 var dateTimeProper = DateTime.Parse(incomingSearch);
                 return toDoContext.Todos.Where(x => x.CreationDate == dateTimeProper || x.DueDate == dateTimeProper).Include(b => b.Assignee).ToList();
             }
-            else
-            {
-                return toDoContext.Todos.Where(x => x.Title == incomingSearch || x.Content == incomingSearch || x.Assignee.Name == incomingSearch).Include(b => b.Assignee).ToList();
-            }
+            return toDoContext.Todos.Where(x => x.Title == incomingSearch || x.Content == incomingSearch || x.Assignee.Name == incomingSearch).Include(b => b.Assignee).ToList();
         }
     }
 }
